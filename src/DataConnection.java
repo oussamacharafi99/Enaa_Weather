@@ -57,5 +57,29 @@ public class DataConnection {
         s.close();
         System.out.println("The City Add successfully!");
     }
+    public static void updateCity(City city) throws SQLException {
+        String sql = "UPDATE city SET cityName = ?, currentTemperature = ? ,currentHumidity = ? ,currentWindSpeed = ? WHERE cityId = ?";
+        Connection connection = getConnection();
+        PreparedStatement statement = connection.prepareStatement(sql);
+        statement.setString(1, city.getCityName());
+        statement.setInt(2, city.getCurrentTemperature());
+        statement.setInt(3,city.getCurrentHumidity());
+        statement.setInt(4,city.getCurrentWindSpeed());
+        statement.setInt(5,city.getCityId());
+        statement.executeUpdate();
+        connection.close();
+        statement.close();
+        System.out.println("Student updated successfully!");
+    }
+    public static void deleteCity(Integer id) throws SQLException {
+        String sql = "DELETE FROM city WHERE cityId = ?";
+        Connection connection = getConnection();
+        PreparedStatement statement = connection.prepareStatement(sql);
 
+        statement.setInt(1, id);
+        statement.executeUpdate();
+        connection.close();
+        statement.close();
+        System.out.println("Student deleted successfully!");
+    }
 }
