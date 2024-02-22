@@ -1,12 +1,21 @@
 
-import java.time.LocalDate;
+import java.util.Date;
 
-    public class CityHistory {
-
+public class CityHistory {
+    City city1 = new City();
     private Integer historicalDataId;
-    private LocalDate Date;
-    private Integer eventDate;
+    private Integer cityId;
+    private Date Date;
     private Integer temperature;
+    public CityHistory(){
+    }
+
+
+
+
+
+
+
 
         public Integer getHistoricalDataId() {
             return historicalDataId;
@@ -16,20 +25,12 @@ import java.time.LocalDate;
             this.historicalDataId = historicalDataId;
         }
 
-        public LocalDate getDate() {
-            return Date;
+        public java.sql.Date getDate() {
+            return (java.sql.Date) Date;
         }
 
-        public void setDate(LocalDate date) {
+        public void setDate(Date date) {
             Date = date;
-        }
-
-        public Integer getEventDate() {
-            return eventDate;
-        }
-
-        public void setEventDate(Integer eventDate) {
-            this.eventDate = eventDate;
         }
 
         public Integer getTemperature() {
@@ -38,5 +39,13 @@ import java.time.LocalDate;
 
         public void setTemperature(Integer temperature) {
             this.temperature = temperature;
+        }
+
+        public Integer getCityId() {
+            return cityId;
+        }
+
+        public void setCityId(Integer cityId) {
+            this.cityId = cityId;
         }
     }

@@ -6,6 +6,7 @@ import java.sql.SQLException;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) throws SQLException {
-
+            Menu menu = new Menu();
+            menu.menu();
         }
     }
