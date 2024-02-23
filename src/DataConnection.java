@@ -1,7 +1,6 @@
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class DataConnection {
     public static Connection connection() throws SQLException {
@@ -39,17 +38,21 @@ public class DataConnection {
     }
 
     public static void addCity(City city) throws SQLException{
-        String sql = "INSERT INTO city ( cityName, currentTemperature, currentHumidity, currentWindSpeed) VALUES ( ?, ?, ?, ?)";
+        String sql = "INSERT INTO city ( cityId, cityName, currentTemperature, currentHumidity, currentWindSpeed) VALUES ( ?, ?, ?, ?,?)";
         Connection connection = getConnection();
         PreparedStatement s = connection.prepareStatement(sql);
-        s.setString(1, city.getCityName());
-        s.setInt(2, city.getCurrentTemperature());
-        s.setInt(3, city.getCurrentHumidity());
-        s.setInt(4, city.getCurrentWindSpeed());
+        s.setInt(1, city.getCityId());
+        s.setString(2, city.getCityName());
+        s.setInt(3, city.getCurrentTemperature());
+        s.setInt(4, city.getCurrentHumidity());
+        s.setInt(5, city.getCurrentWindSpeed());
+        //addCityHistory(city);
         s.executeUpdate();
+
         connection.close();
         s.close();
         System.out.println("The City Add successfully!");
+
     }
     public static void updateCity(City city) throws SQLException {
 
@@ -97,5 +100,18 @@ public class DataConnection {
         r.close();
         return cityHistories;
     }
+//    public static void addCityHistory(City city) throws SQLException{
+//        String sql = "INSERT INTO city (cityId, temperature, date ) VALUES ( ?, ?, ?)";
+//        Connection connection = getConnection();
+//        PreparedStatement s = connection.prepareStatement(sql);
+//        s.setInt(1, city.getCityId());
+//        s.setInt(2, city.getCurrentTemperature());
+//        s.setInt(3, city.getDateCity());
+//        s.executeUpdate();
+//        connection.close();
+//        s.close();
+//        System.out.println("The City Add successfully!");
+//    }
+
 
 }

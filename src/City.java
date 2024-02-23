@@ -1,5 +1,4 @@
 import java.util.Date;
-import java.util.List;
 
 public class City {
 
@@ -12,10 +11,13 @@ public class City {
     private Date dateCity;
 
 
+
+
     public City() {
     }
 
-    public City(String name , Integer temperature , Integer humidity , Integer windSpeed){
+    public City(Integer id, String name , Integer temperature , Integer humidity , Integer windSpeed){
+        this.cityId = id;
         this.cityName = name;
         this.currentTemperature = temperature;
         this.currentHumidity = humidity;
@@ -83,8 +85,8 @@ public class City {
 
 
 
-    public java.sql.Date getDateCity() {
-        return (java.sql.Date) dateCity;
+    public Date getDateCity() {
+        return  dateCity;
     }
 
     public void setDateCity(Date dateCity) {

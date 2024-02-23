@@ -35,17 +35,19 @@ public class Menu {
     }
 
     public void ajouter() throws SQLException {
-
+        City city = new City();
+        System.out.println("ENTRE CITY ID !");
+        city.setCityId(new Scanner(System.in).nextInt());
         System.out.println("ENTRE CITY NAME !");
-        String cityName = new Scanner(System.in).nextLine();
+        city.setCityName(new Scanner(System.in).nextLine());
         System.out.println("ENTRE THE CITY TEMPERATURE !");
-        Integer temperature = new Scanner(System.in).nextInt();
+        city.setCurrentTemperature(new Scanner(System.in).nextInt());
         System.out.println("ENTRE THE CITY HUMIDITY !");
-        Integer humidity = new Scanner(System.in).nextInt();
+        city.setCurrentHumidity(new Scanner(System.in).nextInt());
         System.out.println("ENTRE THE CITY WINDSPEED !");
-        Integer windSpeed = new Scanner(System.in).nextInt();
+        city.setCurrentWindSpeed(new Scanner(System.in).nextInt());
 
-        DataConnection.addCity(new City(cityName, temperature, humidity, windSpeed ));
+        DataConnection.addCity(city);
     }
     public void update() throws SQLException {
         City city = new City();
