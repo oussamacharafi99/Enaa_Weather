@@ -71,7 +71,6 @@ public class City {
         sb.append(String.format("  ║ Current Temperature: %-30s ║\n", currentTemperature));
         sb.append(String.format("  ║ Current Humidity   : %-30s ║\n", currentHumidity));
         sb.append(String.format("  ║ Current Wind Speed : %-30s ║\n", currentWindSpeed));
-        sb.append(String.format("  ║ Date               : %-30s ║\n", dateCity));
         sb.append("  ╚══════════════════ ═════════════ ════════════════════╝\n");
         return sb.toString();
     }

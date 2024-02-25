@@ -2,69 +2,47 @@
 import java.util.Date;
 
 public class CityHistory {
-    City city1 = new City();
     private Integer historicalDataId;
     private Integer cityId;
     private Date date;
     private Integer temperature;
-    public CityHistory(Integer id, Date date, Integer temperature){
-        this.cityId = id;
+    private String cityName;
+    public CityHistory(Integer id , Integer idc,Integer temperature , Date date,  String cityName){
+        this.historicalDataId = id;
+        this.cityId = idc;
         this.date = date;
         this.temperature = temperature;
+        this.cityName = cityName;
     }
     public CityHistory(){
     }
 
-
-
-    @Override
-    public String toString() {
-        String Date = null;
-        return "CityHistory{" +
-                "city1=" + city1 +
-                ", historicalDataId=" + historicalDataId +
-                ", cityId=" + cityId +
-                ", Date=" + Date +
-                ", temperature=" + temperature +
-                '}';
+    public CityHistory(Integer cityId, Integer currentTemperature, String cityName) {
+        this.cityId = cityId;
+        this.temperature = currentTemperature;
+        this.cityName = cityName;
     }
 
 
-
-
-
-
-        public Integer getHistoricalDataId() {
+    public Integer getHistoricalDataId() {
             return historicalDataId;
-        }
-
-        public void setHistoricalDataId(Integer historicalDataId) {
-            this.historicalDataId = historicalDataId;
-        }
-
-        public java.sql.Date getDate() {
-            Object Date = null;
-            return (java.sql.Date) Date;
-        }
-
-        public void setDate(Date date) {
-            Date Date = date;
         }
 
         public Integer getTemperature() {
             return temperature;
         }
 
-        public void setTemperature(Integer temperature) {
-            this.temperature = temperature;
-        }
-
         public Integer getCityId() {
             return cityId;
         }
 
-        public void setCityId(Integer cityId) {
-            this.cityId = cityId;
-        }
 
-}
+    public Date getDate() {
+        return date;
+    }
+
+    public String getCityName() {
+        return cityName;
+    }
+
+    }
