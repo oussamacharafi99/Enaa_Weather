@@ -33,5 +33,17 @@ public class DataConnectionCityHistory {
         r.close();
         return cityHistories;
     }
+    public static void addCityHistory(CityHistory city) throws SQLException{
+        String sql = "INSERT INTO cityhistory (cityId, temperature, cityName ) VALUES ( ?, ?, ?)";
+        Connection connection = getConnection();
+        PreparedStatement s = connection.prepareStatement(sql);
+        s.setInt(1, city.getCityId());
+        s.setInt(2, city.getTemperature());
+        s.setString(3,city.getCityName());
+        s.executeUpdate();
+        connection.close();
+        s.close();
+        System.out.println("The CityH Add successfully!");
+    }
 
 }
