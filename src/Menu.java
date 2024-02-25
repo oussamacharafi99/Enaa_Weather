@@ -20,7 +20,7 @@ public class Menu {
                     ajouter();
                     break;
                 case 2 :
-                    System.out.println(DataConnection.getCity());
+                    System.out.println(DataConnectionCity.getCity());
                     break;
                 case 3:
                     remove();
@@ -58,9 +58,9 @@ public class Menu {
         System.out.println("ENTRE THE CITY WINDSPEED !");
         Integer currentWindSpeed = new Scanner(System.in).nextInt();
 
-        DataConnection.addCity(new City(cityId, cityName, currentTemperature, currentHumidity , currentWindSpeed));
+        DataConnectionCity.addCity(new City(cityId, cityName, currentTemperature, currentHumidity , currentWindSpeed));
 
-        DataConnection.addCityHistory(new CityHistory(cityId, currentTemperature, cityName));
+        DataConnectionCityHistory.addCityHistory(new CityHistory(cityId, currentTemperature, cityName));
     }
     public void remove() throws  SQLException {
         System.out.println("+-------------------------------------+");
@@ -68,7 +68,7 @@ public class Menu {
         System.out.println("+-------------------------------------+");
         System.out.println("| - Entrez le nom du ville à supprimer :");
         String name =new Scanner(System.in).nextLine();
-        DataConnection.deleteCity(DataConnection.getCity().stream().filter(city1 -> city1.getCityName().equals(name)).collect(Collectors.toList()).get(0).getCityName());
+        DataConnectionCity.deleteCity(DataConnectionCity.getCity().stream().filter(city1 -> city1.getCityName().equals(name)).collect(Collectors.toList()).get(0).getCityName());
 
     }
     public void updateCity() throws SQLException {
@@ -90,8 +90,8 @@ public class Menu {
         System.out.println("ENTRE THE CITY WINDSPEED !");
         Integer WINDO = new Scanner(System.in).nextInt();
 
-        DataConnection.updateCity(new City(ID, NAME , TEM , HUM , WINDO));
-        DataConnection.modifierH(new CityHistory(ID , TEM , NAME));
+        DataConnectionCity.updateCity(new City(ID, NAME , TEM , HUM , WINDO));
+        DataConnectionCityHistory.modifierH(new CityHistory(ID , TEM , NAME));
     }
 
     public void search() throws SQLException {
@@ -100,13 +100,13 @@ public class Menu {
         System.out.println("╔══════════════════════════╗");
         System.out.println("║          Search          ║");
         System.out.println(" ══════════════════════════ ");
-        DataConnection.searchCityHistory(cityName);
+        DataConnectionCityHistory.searchCityHistory(cityName);
     }
     public void afficherH() throws SQLException {
         System.out.println("+-------------------------------------+");
         System.out.println("|         historique des villes         |");
         System.out.println("+-------------------------------------+");
-        for ( CityHistory cityHistory : DataConnection.getCityHistory()){
+        for ( CityHistory cityHistory : DataConnectionCityHistory.getCityHistory()){
             System.out.println("----------------------------");
             System.out.println("ID: " + cityHistory.getHistoricalDataId());
             System.out.println("Nom de la ville: " + cityHistory.getCityName());

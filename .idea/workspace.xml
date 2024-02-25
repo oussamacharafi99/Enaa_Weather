@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65a88979-b26c-4d46-b76d-36cc61807f58" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/City.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CityHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CityHistory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DataConnectionCityHistory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataConnectionCity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,5 +85,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Menu.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
